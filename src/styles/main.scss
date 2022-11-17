@@ -1,0 +1,146 @@
+#main {
+  display: flex;
+
+  #aside {
+    padding: 30px 20px;
+    width: 20%;
+    min-height: 100vh;
+    border-right: 1px solid var(--bg-dark-border);
+
+    button {
+      width: 100%;
+      text-align-last: left;
+      padding: 10px 20px;
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-radius: 30px;
+      cursor: pointer;
+
+      span:first-child {
+        font-size: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: -2px;
+      }
+
+      &:hover {
+        // color: var(--black);
+        background: rgb(83, 83, 83);
+      }
+    }
+  }
+  #contents {
+    width: 80%;
+    padding: 30px;
+
+    h2 {
+      margin-bottom: 10px;
+
+      em {
+        color: rgb(167, 168, 255);
+      }
+    }
+  }
+}
+
+.videos__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+
+  > div {
+    width: 24%;
+    margin-bottom: 1%;
+    height: 400px;
+    // background: #eee;
+  }
+
+  .box {
+    .box__info {
+      color: #fff;
+      .tit {
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+    .channelName {
+      display: block;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.829);
+      margin-top: 20px;
+    }
+  }
+}
+
+// .channel__box {
+//   text-align: center;
+//   margin-top: 20px;
+
+//   .channel__thumb {
+//     display: inline-block;
+//     background: #fff;
+//     width: 200px;
+//     height: 200px;
+//     border-radius: 50%;
+//   }
+// }
+
+// videoConts
+.videoConts {
+  .container {
+    width: 1500px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      width: 70%;
+      height: 100vh;
+
+      .video {
+        width: 100%;
+        height: 600px;
+        background: rgb(141, 141, 141);
+        position: relative;
+        padding-bottom: 27.65%;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .info {
+        margin-top: 30px;
+        height: 100px;
+        background: #eee;
+
+        .title {
+        }
+        .desc {
+        }
+      }
+    }
+    .right {
+      width: 28%;
+      height: 100vh;
+      background: #ddd;
+    }
+  }
+}
