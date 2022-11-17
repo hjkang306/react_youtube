@@ -53,7 +53,7 @@
   > div {
     width: 24%;
     margin-bottom: 1%;
-    height: 400px;
+    // height: 400px;
     // background: #eee;
   }
 
@@ -141,6 +141,52 @@
       width: 28%;
       height: 100vh;
       background: #ddd;
+    }
+  }
+}
+
+// media
+@media (max-width: 1200px) {
+  #main {
+    display: contents;
+
+    #aside {
+      width: 100%;
+      min-height: auto;
+
+      > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        button {
+          display: inline-block;
+          width: auto;
+        }
+      }
+    }
+    #contents {
+      width: 100%;
+    }
+  }
+  .videos__inner {
+    > div {
+      width: 32%;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .videos__inner {
+    > div {
+      width: 49%;
+    }
+  }
+}
+@media (max-width: 560px) {
+  .videos__inner {
+    > div {
+      width: 100%;
     }
   }
 }
