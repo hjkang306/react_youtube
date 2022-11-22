@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { fetchAPI } from '../utils/fetchAPI'
+import { Videos, Loader } from './'
 
 const VideoConts = () => {
   const [videoDetail, setVideoDetail] = useState(null)
@@ -18,11 +19,7 @@ const VideoConts = () => {
     )
   }, [id])
 
-  // const {
-  //   snippet: { title, channelId, channelTitle },
-  //   statistics: { viewCount, likeCount },
-  // } = videoDetail
-
+  if (!videos?.length) return <Loader />
   return (
     <div className="videoConts">
       <div className="container">
@@ -33,12 +30,29 @@ const VideoConts = () => {
               controls
             />
           </div>
+          <div className="video__under">
+            <Link to={`/channel/${videoDetail.snippet.channelId}`}>
+              <span className="channelName">
+                {videoDetail.snippet.channelTitle}
+              </span>
+            </Link>
+            <div className="count">
+              <div className="view">
+                조회수 : {videoDetail?.statistics.viewCount}
+              </div>
+              <div className="like">
+                좋아요 : {videoDetail?.statistics.likeCount}
+              </div>
+            </div>
+          </div>
           <div className="info">
-            <div className="title"></div>
-            <div className="desc"></div>
+            <div className="title">{videoDetail?.snippet.title}</div>
+            <div className="desc">{videoDetail?.snippet.description}</div>
           </div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <Videos videos={videos} layout="column" />
+        </div>
       </div>
     </div>
   )
