@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { fetchAPI } from '../utils/fetchAPI'
-import { Category, Videos } from './'
+import { Category, Videos, Loader } from './'
 
 const MainConts = () => {
   const [selectCategory, setSelectCategory] = useState('언제나 가을')
@@ -12,6 +12,7 @@ const MainConts = () => {
     )
   }, [selectCategory])
 
+  if (!videos?.length) return <Loader />
   return (
     <main id="main">
       <aside id="aside">

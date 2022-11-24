@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { useParams, Link } from 'react-router-dom'
 import { fetchAPI } from '../utils/fetchAPI'
 import { Videos, Loader } from './'
+import { GoHeart, GoEye } from 'react-icons/go'
 
 const VideoConts = () => {
   const [videoDetail, setVideoDetail] = useState(null)
@@ -38,10 +39,10 @@ const VideoConts = () => {
             </Link>
             <div className="count">
               <div className="view">
-                조회수 : {videoDetail?.statistics.viewCount}
+                <GoEye /> {videoDetail?.statistics.viewCount}
               </div>
               <div className="like">
-                좋아요 : {videoDetail?.statistics.likeCount}
+                <GoHeart /> {videoDetail?.statistics.likeCount}
               </div>
             </div>
           </div>

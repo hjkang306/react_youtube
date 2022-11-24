@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { fetchAPI } from '../utils/fetchAPI'
 import { useParams } from 'react-router-dom'
 import { Videos, Loader } from './'
+import { GoOrganization, GoDeviceCameraVideo, GoEye } from 'react-icons/go'
 
 const ChennelConts = () => {
   const [channelDetail, setChannelDetail] = useState()
@@ -40,9 +41,15 @@ const ChennelConts = () => {
         />
         <h3 className="channel__id">{channelDetail?.snippet?.title}</h3>
         <div>
-          <span>구독자 수 : {channelDetail?.statistics?.subscriberCount}</span>
-          <span>영상 총 갯수 : {channelDetail?.statistics?.videoCount}</span>
-          <span>총 시청 수 : {channelDetail?.statistics?.viewCount}</span>
+          <span>
+            <GoOrganization /> {channelDetail?.statistics?.subscriberCount}
+          </span>
+          <span>
+            <GoDeviceCameraVideo /> {channelDetail?.statistics?.videoCount}
+          </span>
+          <span>
+            <GoEye /> {channelDetail?.statistics?.viewCount}
+          </span>
         </div>
       </div>
       <div className="channel__videos">
